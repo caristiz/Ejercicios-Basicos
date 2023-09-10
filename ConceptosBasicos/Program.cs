@@ -19,6 +19,7 @@
                 if (int.TryParse(entrada, out int eleccion) && eleccion >= 1 && eleccion <=15)
                 {
                     //Agregar la lógica del switch con las funciones de los ejercicios
+                    
 
                     Console.WriteLine("Presiona una tecla para continuar...");
                     Console.ReadKey();
