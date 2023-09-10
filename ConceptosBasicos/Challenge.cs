@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace itm.csharp.basic
 {
     /*Solicita al usuario un número y eleva este número al cuadrado 
@@ -137,6 +139,140 @@ namespace itm.csharp.basic
             }
         }
     }
+
+    /*Calcula y muestra la suma de los números pares entre 1 y 50. */
+    public class Challenge8
+    {
+        public void Run ()
+        {
+            int suma = 0;
+          for (int i = 2; i <=50; i+= 2)
+          {
+            suma +=i;
+          }
+
+          Console.WriteLine("La suma de los números pares entre 1 y 50 es: "+ suma);
+        }
+    }
+
+    /*Solicita al usuario los valores para dos fracciones y
+    muestra la diferencia entre esas fracciones.*/
+
+    public class Challenge9
+    {
+        public void Run ()
+        {
+            Console.Write("Ingresa el numerador de la primera fracción: ");
+            int.TryParse(Console.ReadLine(), out int nume1);
+            Console.Write("Ingresa el denominador de la primera fracción: ");
+            int.TryParse(Console.ReadLine(), out int deno1);
+
+            Console.Write("Ingresa el numerador de la segunda fracción: ");
+            int.TryParse(Console.ReadLine(), out int nume2);
+            Console.Write("Ingresa el denominador de la segunda fracción: ");
+            int.TryParse(Console.ReadLine(), out int deno2);
+
+            try
+            {
+                Fraccion fraccion1 = new Fraccion(nume1,deno1);
+                Fraccion fraccion2 = new Fraccion(nume2,deno2);
+
+                Fraccion resultado = fraccion1.Restar(fraccion2);
+                Console.WriteLine($"la sima de {fraccion1} y {fraccion2} es: {resultado}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error:{e.Message}");
+            }
+
+
+
+        }
+    }
+
+    public class Fraccion
+    {
+        public int Numerador { get; private set;}
+        public int Denominador { get; private set;}
+
+        public Fraccion (int numerador, int denominador)
+        {
+            if (Denominador == 0)
+            {
+                throw new ArgumentException("El doniminador no puede ser cero");
+            }
+            Numerador = numerador;
+            Denominador = denominador;
+        }
+
+        public Fraccion Restar(Fraccion otra)
+        {
+          int nuevoNumerador = Numerador * otra.Denominador - otra.Numerador * Denominador;
+          int nuevoDenominador = Denominador * otra.Denominador;
+          return new Fraccion (nuevoNumerador, nuevoDenominador);
+        }
+
+        public override string ToString()
+        {
+            return $"{Numerador}/{Denominador}";
+        }
+
+    }
+
+    
+    /*Pide una palabra al usuario y muestra la longitud de esa palabra.*/
+
+    public class Challenge10
+    {
+        public void Run()
+        {
+           Console.WriteLine("Ingrese una palabra:");
+           string? palabra = Console.ReadLine();
+           int longitud = palabra.Length;
+           Console.WriteLine($"La longitud de la palabra '{palabra}' es: {longitud}"); ;
+        }
+    }
  
+    /* Pide al usuario cuatro números y muestra el promedio.*/
+
+    public class Challenge11
+    {
+        public void Run()
+        {
+            Console.WriteLine("Digite el primer numero");
+           double.TryParse(Console.ReadLine(), out double numeroA);         
+            Console.WriteLine("Digite el Segundo numero");
+           double.TryParse(Console.ReadLine(), out double numeroB);
+            Console.WriteLine("Digite el tercer numero");
+           double.TryParse(Console.ReadLine(), out double numeroC);
+            Console.WriteLine("Digite el cuerto numero");
+           double.TryParse(Console.ReadLine(), out double numeroD);
+
+        
+           double promedio = (numeroA + numeroB + numeroC + numeroD) / 4;
+           Console.WriteLine($"El promedio de los números ingresados es: {promedio}");
+
+        }
+    }
+     
+    /*Pide al usuario cinco números y muestra el más pequeño. */
+
+    public class Challenge12
+    {
+      public void Run()
+      {
+         double minimo = double.MaxValue;
+
+         for (int i = 1; i <= 5; i++)
+         {
+          Console.Write($"Número {i}: ");
+          double numeroq = double.Parse(Console.ReadLine());
+          minimo = Math.Min(minimo, numeroq);
+          }
+           Console.WriteLine($"El número más pequeño es: {minimo}");
+
+      }
+    }
+
 
 }
