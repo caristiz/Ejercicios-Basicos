@@ -8,7 +8,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("1 - Potencia positiva");
+            Console.WriteLine("Potencia positiva");
             Console.WriteLine("Digite un número");
             int.TryParse(Console.ReadLine(), out int numero);
             if (numero >= 0)
@@ -28,7 +28,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-          Console.WriteLine("2 - Doble o Triple");
+          Console.WriteLine("--> DOBLE O TRIPLE");
             int num1, num2;
           Console.WriteLine("Ingrese un número");
            int.TryParse(Console.ReadLine(), out num1);
@@ -48,7 +48,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-           Console.WriteLine("3 - Raíz o Cuadrado");
+           Console.WriteLine("--> RAÍ O CUADRADO");
            Console.WriteLine("Digite un número");
             double.TryParse(Console.ReadLine(), out double numero3);
             if (numero3 > 0)
@@ -71,7 +71,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
-            Console.WriteLine("4 - Perímetro del Círculo");
+            Console.WriteLine("--> PERÍMETRO DEL CIRCULO");
             Console.WriteLine("Ingrese el radio de la circunferencia");
             double.TryParse(Console.ReadLine(), out double radio);
             double perimetro = Math.PI * radio * 2;
@@ -87,7 +87,7 @@ namespace itm.csharp.basic
     {
        public void Run()
        {
-         Console.WriteLine("5 -  Día laborales");
+         Console.WriteLine("--> DÍAS LABORALES");
          Console.WriteLine("Ingresa un número del 1 al 7");
             int.TryParse(Console.ReadLine(), out int dia);
 
@@ -111,7 +111,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("6 -  Calcular Impuesto");
+            Console.WriteLine("--> CALCULAR IMPUESTOS");
             Console.WriteLine("Ingrese su salario anual");
             double.TryParse(Console.ReadLine(), out double salario);
             double impuesto = salario > 12000 ? 0.15 * salario : 0;
@@ -127,7 +127,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("7 - Residuo de una División");
+            Console.WriteLine("--> RESIDUO DE UNA DIVISIÓN");
             try
             {
                 Console.WriteLine("Ingresar número a dividir");
@@ -152,7 +152,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
-            Console.WriteLine("8 - Suma de Números Pares");
+            Console.WriteLine("--> SUMA DE NÚMEROS PARES");
             int suma = 0;
           for (int i = 2; i <=50; i+= 2)
           {
@@ -170,7 +170,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
-            Console.WriteLine("9 - Resta de fracciones");
+            Console.WriteLine("--> RESTA DE FRACCIONES");
             Console.Write("Ingresa el numerador de la primera fracción: ");
             int.TryParse(Console.ReadLine(), out int nume1);
             Console.Write("Ingresa el denominador de la primera fracción: ");
@@ -187,7 +187,7 @@ namespace itm.csharp.basic
                 Fraccion fraccion2 = new Fraccion(nume2,deno2);
 
                 Fraccion resultado = fraccion1.Restar(fraccion2);
-                Console.WriteLine($"la sima de {fraccion1} y {fraccion2} es: {resultado}");
+                Console.WriteLine($"la resta de {fraccion1} y {fraccion2} es: {resultado}");
             }
             catch (Exception e)
             {
@@ -206,7 +206,7 @@ namespace itm.csharp.basic
 
         public Fraccion (int numerador, int denominador)
         {
-            if (Denominador == 0)
+            if (denominador == 0)
             {
                 throw new ArgumentException("El doniminador no puede ser cero");
             }
@@ -216,6 +216,7 @@ namespace itm.csharp.basic
 
         public Fraccion Restar(Fraccion otra)
         {
+          
           int nuevoNumerador = Numerador * otra.Denominador - otra.Numerador * Denominador;
           int nuevoDenominador = Denominador * otra.Denominador;
           return new Fraccion (nuevoNumerador, nuevoDenominador);
@@ -228,6 +229,11 @@ namespace itm.csharp.basic
 
     }
 
+    public class Challenge91
+    {
+
+    }
+
     
     /*Pide una palabra al usuario y muestra la longitud de esa palabra.*/
 
@@ -235,7 +241,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-           Console.WriteLine("10 - Longitud de Cadena");
+           Console.WriteLine("--> LONGITUD DE CADENAS");
            Console.WriteLine("Ingrese una palabra:");
            string? palabra = Console.ReadLine();
            int longitud = palabra.Length;
@@ -249,7 +255,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("11 - Promedio de cuatro números");
+            Console.WriteLine("--> PROMEDIO DE CUATRO NÚMEROS");
             Console.WriteLine("Digite el primer numero");
            double.TryParse(Console.ReadLine(), out double numeroA);         
             Console.WriteLine("Digite el Segundo numero");
@@ -272,7 +278,7 @@ namespace itm.csharp.basic
     {
       public void Run()
       {
-         Console.WriteLine("12 - El mas pequeño de cinco números");
+         Console.WriteLine("--> EL MÁS PEQUEÑO DE CINCO NÚMEROS");
          double minimo = double.MaxValue;
 
          for (int i = 1; i <= 5; i++)
@@ -292,7 +298,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("13 - Contadot de Vocales");
+            Console.WriteLine("--> CONTADOR DE VOCALES");
             Console.WriteLine("Por favor, ingresa una palabra:");
            string text = Console.ReadLine().ToLower(); 
             int contadorVocales = 0;
@@ -317,7 +323,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("14 - Buscar Factorial");
+            Console.WriteLine("--> CALCULAR FACTORIAL");
             int n, cont, fact;
             Console.WriteLine("Digite el valor de n!: ");
             n = Convert.ToInt32(Console.ReadLine());
@@ -344,7 +350,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("15 - Validador de rango");
+            Console.WriteLine("--> VALIDADOR DE RANGO");
             int.TryParse(Console.ReadLine(), out int numeroRango);
            if (numeroRango >= 10 && numeroRango <= 20)
            {
