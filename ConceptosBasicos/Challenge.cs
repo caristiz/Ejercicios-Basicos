@@ -8,6 +8,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+            Console.WriteLine("1 - Potencia positiva");
             Console.WriteLine("Digite un número");
             int.TryParse(Console.ReadLine(), out int numero);
             if (numero >= 0)
@@ -27,6 +28,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+          Console.WriteLine("2 - Doble o Triple");
             int num1, num2;
           Console.WriteLine("Ingrese un número");
            int.TryParse(Console.ReadLine(), out num1);
@@ -46,6 +48,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+           Console.WriteLine("3 - Raíz o Cuadrado");
            Console.WriteLine("Digite un número");
             double.TryParse(Console.ReadLine(), out double numero3);
             if (numero3 > 0)
@@ -68,6 +71,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
+            Console.WriteLine("4 - Perímetro del Círculo");
             Console.WriteLine("Ingrese el radio de la circunferencia");
             double.TryParse(Console.ReadLine(), out double radio);
             double perimetro = Math.PI * radio * 2;
@@ -83,7 +87,8 @@ namespace itm.csharp.basic
     {
        public void Run()
        {
-        Console.WriteLine("Ingresa un número del 1 al 7");
+         Console.WriteLine("5 -  Día laborales");
+         Console.WriteLine("Ingresa un número del 1 al 7");
             int.TryParse(Console.ReadLine(), out int dia);
 
             switch(dia)
@@ -106,6 +111,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+            Console.WriteLine("6 -  Calcular Impuesto");
             Console.WriteLine("Ingrese su salario anual");
             double.TryParse(Console.ReadLine(), out double salario);
             double impuesto = salario > 12000 ? 0.15 * salario : 0;
@@ -121,6 +127,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+            Console.WriteLine("7 - Residuo de una División");
             try
             {
                 Console.WriteLine("Ingresar número a dividir");
@@ -145,6 +152,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
+            Console.WriteLine("8 - Suma de Números Pares");
             int suma = 0;
           for (int i = 2; i <=50; i+= 2)
           {
@@ -162,6 +170,7 @@ namespace itm.csharp.basic
     {
         public void Run ()
         {
+            Console.WriteLine("9 - Resta de fracciones");
             Console.Write("Ingresa el numerador de la primera fracción: ");
             int.TryParse(Console.ReadLine(), out int nume1);
             Console.Write("Ingresa el denominador de la primera fracción: ");
@@ -226,6 +235,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+           Console.WriteLine("10 - Longitud de Cadena");
            Console.WriteLine("Ingrese una palabra:");
            string? palabra = Console.ReadLine();
            int longitud = palabra.Length;
@@ -239,6 +249,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
+            Console.WriteLine("11 - Promedio de cuatro números");
             Console.WriteLine("Digite el primer numero");
            double.TryParse(Console.ReadLine(), out double numeroA);         
             Console.WriteLine("Digite el Segundo numero");
@@ -261,6 +272,7 @@ namespace itm.csharp.basic
     {
       public void Run()
       {
+         Console.WriteLine("12 - El mas pequeño de cinco números");
          double minimo = double.MaxValue;
 
          for (int i = 1; i <= 5; i++)
@@ -272,6 +284,78 @@ namespace itm.csharp.basic
            Console.WriteLine($"El número más pequeño es: {minimo}");
 
       }
+    }
+
+    /*Pide una palabra al usuario y devuelve el número de vocales en esa palabra*/
+
+    public class Challenge13
+    {
+        public void Run()
+        {
+            Console.WriteLine("13 - Contadot de Vocales");
+            Console.WriteLine("Por favor, ingresa una palabra:");
+           string text = Console.ReadLine().ToLower(); 
+            int contadorVocales = 0;
+
+            foreach (char letra in text)
+          {
+            if ("aeiou".Contains(letra))
+            {
+                contadorVocales++;
+            }
+           }
+
+          Console.WriteLine($"El número de vocales en la palabra \"{text}\" es: {contadorVocales}");
+
+        }
+
+    }
+
+    /*Pide un número al usuario y devuelve el factorial de ese número.*/
+
+    public class Challenge14
+    {
+        public void Run()
+        {
+            Console.WriteLine("14 - Buscar Factorial");
+            int n, cont, fact;
+            Console.WriteLine("Digite el valor de n!: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            if ( n==0)
+            {
+                Console.WriteLine("El factorial de (0) es 1");
+            }
+            else
+            {
+                fact = n;
+                for (cont =n; cont > 1; cont --);
+                {
+                    fact = fact * (cont-1);
+                }
+                Console.WriteLine($"El factroial de {n} es: {fact}");
+            }
+
+        }
+    }
+
+    /*Pide un número al usuario y verifica si está en el rango de 10 a 20 (ambos incluidos). */
+
+    public class Challenge15
+    {
+        public void Run()
+        {
+            Console.WriteLine("15 - Validador de rango");
+            int.TryParse(Console.ReadLine(), out int numeroRango);
+           if (numeroRango >= 10 && numeroRango <= 20)
+           {
+           Console.WriteLine("Resultado: Está en el rango.");
+           }
+          else
+           {
+           Console.WriteLine("Resultado: Fuera del rango.");
+            }
+
+        }
     }
 
 
