@@ -73,5 +73,70 @@ namespace itm.csharp.basic
         }
     }
 
+    
+   /*Solicita al usuario un número entre 1 y 7 y muestra el día de la 
+  semana correspondiente, pero solo considerando los días laborables*/ 
+
+    public class Challenge5
+    {
+       public void Run()
+       {
+        Console.WriteLine("Ingresa un número del 1 al 7");
+            int.TryParse(Console.ReadLine(), out int dia);
+
+            switch(dia)
+            {
+                case 1:Console.WriteLine("Lunes");break;
+                case 2:Console.WriteLine("Martes");break;
+                case 3:Console.WriteLine("Miércoles");break;
+                case 4:Console.WriteLine("Jueves");break;
+                case 5:Console.WriteLine("Viernes");break;
+                default: Console.WriteLine("Número fuera del rango laboral");break;
+
+            }
+       }
+    }
+
+    /*Solicita al usuario su salario anual y, si este excede los 12000, 
+    muestra el impuesto a pagar que es el 15% del excedente. */ 
+
+    public class Challenge6
+    {
+        public void Run()
+        {
+            Console.WriteLine("Ingrese su salario anual");
+            double.TryParse(Console.ReadLine(), out double salario);
+            double impuesto = salario > 12000 ? 0.15 * salario : 0;
+            Console.WriteLine($"El impuesto a pagar es: {impuesto}");
+
+        }   
+    }
+
+    /*: Solicita dos números y muestra el residuo de la división del 
+    primero entre el segundo. */
+
+    public class Challenge7
+    {
+        public void Run()
+        {
+            try
+            {
+                Console.WriteLine("Ingresar número a dividir");
+                double.TryParse(Console.ReadLine(), out double dividendo);
+                Console.WriteLine("Ingresar el divisor");
+                double.TryParse(Console.ReadLine(), out double divisor);
+                Console.WriteLine($"El residuo de la división es: {dividendo % divisor}");
+            }
+            catch(DivideByZeroException)
+            {
+                Console.WriteLine("No se puede divir por cero");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error al realizar operación");
+            }
+        }
+    }
+ 
 
 }
