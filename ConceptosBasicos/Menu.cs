@@ -19,6 +19,8 @@ namespace itm.csharp.basic
             Console.WriteLine("13.Vowel Counter");
             Console.WriteLine("14.Factorial Finder");
             Console.WriteLine("15.InRange Validator");
+            Console.WriteLine("Ingres el número del ejercicio que desea ejecutar");
+
         }
     }
 }
