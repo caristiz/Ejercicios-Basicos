@@ -8,7 +8,7 @@ namespace itm.csharp.basic
     {
         public void Run()
         {
-            Console.WriteLine("Potencia positiva");
+            Console.WriteLine("POTENCIA POSITIVA");
             Console.WriteLine("Digite un número");
             int.TryParse(Console.ReadLine(), out int numero);
             if (numero >= 0)
@@ -54,11 +54,12 @@ namespace itm.csharp.basic
             if (numero3 > 0)
             {
                 double resultado = Math.Sqrt(numero3);
-                Console.WriteLine ("La raiz cuadrad del número " + numero3 + " es " + resultado);
+                Console.WriteLine ("La raiz cuadrada del número " + numero3 + " es " + resultado);
             }
             else if (numero3 <= 0)
             {
-                double resultado = numero3*numero3;
+                double resultado= numero3*numero3;
+                Console.WriteLine ("El número " + numero3 + " elevado al cuadrado es " + resultado);
             }
             else Console.WriteLine( "Ingresa un número válido.");
 
@@ -114,7 +115,7 @@ namespace itm.csharp.basic
             Console.WriteLine("--> CALCULAR IMPUESTOS");
             Console.WriteLine("Ingrese su salario anual");
             double.TryParse(Console.ReadLine(), out double salario);
-            double impuesto = salario > 12000 ? 0.15 * salario : 0;
+            double impuesto = salario > 12000 ? 0.15 * (salario-12000) : 0;
             Console.WriteLine($"El impuesto a pagar es: {impuesto}");
 
         }   
@@ -229,12 +230,9 @@ namespace itm.csharp.basic
 
     }
 
-    public class Challenge91
-    {
+   
 
-    }
 
-    
     /*Pide una palabra al usuario y muestra la longitud de esa palabra.*/
 
     public class Challenge10
@@ -334,7 +332,7 @@ namespace itm.csharp.basic
             else
             {
                 fact = n;
-                for (cont =n; cont > 1; cont --);
+                for (cont =n; cont > 1; cont --)
                 {
                     fact = fact * (cont-1);
                 }
